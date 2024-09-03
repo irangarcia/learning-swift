@@ -1,4 +1,8 @@
-# Learning Swift
+<p align="center">
+  <img src="https://miro.medium.com/v2/resize:fit:1400/1*saOldy_-VnU4eNQ5Ywcfqw.png" width="200px" />
+</p>
+
+## Learning Swift
 
 Getting all the content from the [Swift documentation](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/). 
 
