@@ -1,4 +1,6 @@
-// String are value types
+// Strings
+
+// Strings are value types
 // A new copy of the existing String is created and the new copy is passed or assigned (not the original version)
 
 let emptyString = ""
