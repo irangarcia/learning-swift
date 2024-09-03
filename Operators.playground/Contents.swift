@@ -65,3 +65,8 @@ for name in names[...2] {
     print (name) // Anna Alex Brian
 }
 
+// Logical
+
+// NOT: !a
+// AND: a && b
+// OR: a || b
