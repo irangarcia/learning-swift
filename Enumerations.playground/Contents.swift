@@ -1,5 +1,6 @@
 // Enumerations
-// Cases don’t have an integer value set by default,
+
+// Cases don’t have an integer value set by default
 
 enum CompassPoint {
     case north

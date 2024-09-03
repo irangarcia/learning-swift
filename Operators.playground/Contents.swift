@@ -33,7 +33,6 @@ a = b // 10
 
 2 <= 1
 
-
 // Nil coalescing
 
 var color: String?

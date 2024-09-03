@@ -1,6 +1,6 @@
 // Collection Types
 
-// ## Arrays
+// Arrays
 
 var shoppingList = ["Eggs", "Milk"]
 
@@ -28,7 +28,7 @@ for (index, value) in shoppingList.enumerated() {
     print("Item \(index + 1): \(value)")
 }
 
-// ## Dictionary
+// Dictionary
 
 var namesOfIntegers: [Int: String] = [:]
 
