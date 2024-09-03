@@ -11,4 +11,4 @@ Getting all the content from the [Swift documentation](https://docs.swift.org/sw
 - [Collection Types](https://github.com/irangarcia/learning-swift/blob/main/CollectionTypes.playground/Contents.swift)
 - [Functions](https://github.com/irangarcia/learning-swift/blob/main/Functions.playground/Contents.swift)
 - [Enumerations](https://github.com/irangarcia/learning-swift/blob/main/Enumerations.playground/Contents.swift)
-- [StructuresAndClasses](https://github.com/irangarcia/learning-swift/blob/main/StructuresAndClasses.playground/Contents.swift)
+- [Structures and Classes](https://github.com/irangarcia/learning-swift/blob/main/StructuresAndClasses.playground/Contents.swift)
