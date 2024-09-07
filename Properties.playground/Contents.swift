@@ -34,37 +34,41 @@ class DataManager {
 
 // Computed properties
 
-struct Point {
-    var x = 0.0, y = 0.0
-}
-
-struct Size {
-    var width = 0.0, height = 0.0
-}
-
-struct Rect {
-    var origin = Point()
-    var size = Size()
-    var center: Point {
+struct Employee {
+    let name: String
+    var vacationAllowed = 0
+    var vacationTaken = 0
+    
+    // Can't modify
+    var vacationRemaining: Int {
+        vacationAllowed - vacationTaken
+    }
+    
+    // Now you can modify
+    var vacationRemainingDynamic: Int {
         get {
-            let centerX = origin.x + (size.width / 2)
-            let centerY = origin.y + (size.height / 2)
-            return Point(x: centerX, y: centerY)
+            vacationAllowed - vacationTaken
         }
-        set(newCenter) {
-            origin.x = newCenter.x - (size.width / 2)
-            origin.y = newCenter.y - (size.height / 2)
+        
+        set {
+            vacationAllowed = vacationTaken + newValue
         }
     }
 }
 
+
+
 // Property observers
+
+// Run when a property changes
 
 class StepCounter {
     var totalSteps: Int = 0 {
+        // Before
         willSet(newTotalSteps) {
             print("About to set totalSteps to \(newTotalSteps)")
         }
+        // After
         didSet {
             if totalSteps > oldValue  {
                 print("Added \(totalSteps - oldValue) steps")
@@ -84,3 +88,14 @@ stepCounter.totalSteps = 360
 stepCounter.totalSteps = 896
 // About to set totalSteps to 896
 // Added 536 steps
+
+// Static properties
+
+// Allow to create properties and methods that belong to a type, rather than to instances of a type.
+
+struct AppData {
+    static let version = "1.3 beta 2"
+    static let settingsFile = "settings.json"
+}
+
+print(AppData.version)

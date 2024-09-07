@@ -19,6 +19,8 @@ enum Planet {
     case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
 }
 
+var planet: Planet = .mars
+
 // Enum + Switch
 
 switch directionToHead {

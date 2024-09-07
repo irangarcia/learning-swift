@@ -19,6 +19,9 @@ a = b // 10
 
 10 / 2
 
+var counter = 10
+counter += 5 // 15
+
 // Comparison
 
 1 == 1

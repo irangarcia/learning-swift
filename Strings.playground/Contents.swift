@@ -28,10 +28,15 @@ let blackHeart = "\u{2665}"
 
 var welcome = "Hello"
 
-welcome.insert("!", at: welcome.endIndex)
-welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex))
+welcome.hasPrefix("He")
 
-welcome.remove(at: welcome.index(before: welcome.endIndex))
+welcome.hasSuffix("llo")
+
+welcome.insert("!", at: welcome.endIndex) // Hello!
+
+welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex)) // Hello there!
+
+welcome.remove(at: welcome.index(before: welcome.endIndex)) // Hello there
 
 // String comparison
 

@@ -36,6 +36,16 @@ func greeting(person: String) -> String {
     "Hello, " + person + "!"
 }
 
+// Return multiple values
+
+func getUser() -> (firstName: String, lastName: String, uselessInfo: String) {
+    (firstName: "Iran", lastName: "Garcia", uselessInfo: "Left-hand")
+}
+
+let (firstName, lastName, _) = getUser()
+
+print(firstName, lastName) // Iran Garcia
+
 // Argument label
 
 func greet(from hometown: String) -> String {
@@ -56,3 +66,33 @@ someFunction(1, secondParameterName: 2)
 func someFunction(parameterWithoutDefault: Int, parameterWithDefault: Int = 12) {}
 
 someFunction(parameterWithoutDefault: 4)
+
+// Handling errors
+
+enum PasswordError: Error {
+    case short, obvious
+}
+
+func checkPassword(_ password: String) throws -> String {
+    if password.count < 5 {
+        throw PasswordError.short
+    }
+    
+    if password == "12345" {
+        throw PasswordError.obvious
+    }
+    
+    if password.count < 10 {
+        return "OK"
+    } else {
+        return "Good!"
+    }
+}
+
+do {
+    let result = try checkPassword("12345")
+} catch PasswordError.obvious {
+    print("I have the same combination on my luggage")
+} catch {
+    print("There was an error.")
+}

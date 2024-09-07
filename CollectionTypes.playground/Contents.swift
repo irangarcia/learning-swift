@@ -12,6 +12,10 @@ var threeDoubles = Array(repeating: 0.0, count: 3) // [0.0, 0.0, 0.0]
 
 someInts.append(8) // [2, 4, 6, 8]
 
+someInts.remove(at: 0) // [4, 6, 8]
+
+shoppingList.contains("Eggs") // true
+
 shoppingList.count // 2
 
 threeDoubles.isEmpty // false
@@ -28,6 +32,8 @@ for (index, value) in shoppingList.enumerated() {
     print("Item \(index + 1): \(value)")
 }
 
+// #####
+
 // Dictionary
 
 var namesOfIntegers: [Int: String] = [:]
@@ -36,6 +42,8 @@ var airports: [String: String] = [
     "YYZ": "Toronto Pearson",
     "GRU": "Guarulhos"
 ]
+
+airports["JFK", default: "John F. Kennedy"]
 
 // Methods
 
@@ -54,3 +62,16 @@ airports.removeValue(forKey: "GRU")
 for (airportCode, airportName) in airports {
     print("\(airportCode): \(airportName)")
 }
+
+// Set
+
+// Don't store things in a particular order and duplicates
+
+var numbers = Set([1, 1, 3, 5, 7, 9])
+
+print(numbers) // [random order]
+
+numbers.insert(10)
+
+// Runs instantly (very fast)
+numbers.contains(11) // false

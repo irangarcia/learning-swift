@@ -1,32 +1,56 @@
 // Protocols
 
-// Define requirements that conforming types must implement
+// Define requirements that conforming types must implement (the minimum
 
-// Property requirements are always declared as variable properties, prefixed with the var keyword.
+// Property requirements are always declared as variable properties, prefixed with the `var` keyword.
 
-protocol SomeProtocol {
-    var mustBeSettable: Int { get set }
-    var doesNotNeedToBeSettable: Int { get }
+protocol Vehicle {
+    var name: String { get }
+    
+    var currentPassengers: Int { get set }
+    
+    
+    func estimateTime(for distance: Int) -> Int
+    func travel(distance: Int)
 }
 
-protocol FullyNamed {
-    var fullName: String { get }
+struct Car: Vehicle {
+    let name = "Citröen C4"
+    var currentPassengers: Int = 1
+    
+    func estimateTime(for distance:Int) -> Int {
+        distance / 50
+    }
+    
+    func travel(distance: Int) {
+        print("I'm driving \(distance)km")
+    }
+    
+    func openSunroof() {
+        print("It's a nice day")
+    }
 }
 
-struct Person: FullyNamed {
-    var fullName: String
+func commute(distance: Int, using vehicle: Vehicle) {
+    if vehicle.estimateTime(for: distance) > 100 {
+        print("Too slow")
+    } else {
+        // Vehicle always will have the .travel method
+        vehicle.travel(distance: distance)
+    }
 }
 
-// `fullName` is mandatory
-let john = Person(fullName: "John Appleseed")
+let car = Car()
+
+commute(distance: 100, using: car)
 
 // Mutating method requirements
 
-protocol Togglable {
+ protocol Togglable {
     mutating func toggle()
 }
 
-enum OnOffSwitch: Togglable {
+ enum OnOffSwitch: Togglable {
     case off, on
     
     mutating func toggle() {
@@ -38,18 +62,7 @@ enum OnOffSwitch: Togglable {
         }
     }
 }
+
 var lightSwitch = OnOffSwitch.off
 
 lightSwitch.toggle()
-
-// Initializer requirements
-
-protocol InitializerProtocol {
-    init(someParameter: Int)
-}
-
-class InitializerClass: InitializerProtocol {
-    required init(someParameter: Int) {
-        // initializer implementation goes here
-    }
-}
